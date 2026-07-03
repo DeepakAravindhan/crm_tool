@@ -48,7 +48,7 @@ export function ProjectsTable() {
         </div>
         <div className="flex items-center space-x-2">
           <Dialog>
-            <DialogTrigger asChild>
+            <DialogTrigger>
               <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Plus className="h-4 w-4 mr-2" /> Create Project
               </Button>
@@ -102,7 +102,7 @@ export function ProjectsTable() {
                 <TableCell>{getStatusBadge(project.status)}</TableCell>
                 <TableCell className="text-right">
                   <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
+                    <DropdownMenuTrigger>
                       <Button variant="ghost" className="h-8 w-8 p-0 hover:bg-slate-100">
                         <span className="sr-only">Open menu</span>
                         <MoreVertical className="h-4 w-4 text-slate-500" />

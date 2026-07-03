@@ -27,7 +27,7 @@ export function EmployeesTab() {
           <Input placeholder="Search employees..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-8 focus-visible:ring-1" />
         </div>
         <Dialog>
-          <DialogTrigger asChild>
+          <DialogTrigger>
             <Button className="bg-blue-600 hover:bg-blue-700 text-white">
               <Plus className="h-4 w-4 mr-2" /> Add Employee
             </Button>
