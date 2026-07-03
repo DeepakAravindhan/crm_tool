@@ -1,0 +1,173 @@
+[
+  {
+    "id": "ASC-001",
+    "name": "Album assigned",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "album@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "AL"
+  },
+  {
+    "id": "ASC-002",
+    "name": "Priya Correction",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "priya@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "PR"
+  },
+  {
+    "id": "ASC-003",
+    "name": "Vas Correction",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "vas@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "VA"
+  },
+  {
+    "id": "ASC-004",
+    "name": "Assigned Priya",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "assigned@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "AS"
+  },
+  {
+    "id": "ASC-005",
+    "name": "CC Ready",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "cc@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "CC"
+  },
+  {
+    "id": "ASC-006",
+    "name": "Assigned Karthi Album",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "assigned@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "AS"
+  },
+  {
+    "id": "ASC-007",
+    "name": "Assigned Veehan",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "assigned@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "AS"
+  },
+  {
+    "id": "ASC-008",
+    "name": "Karthik Correction",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "karthik@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "KA"
+  },
+  {
+    "id": "ASC-009",
+    "name": "Not Applicable",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "not@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "NO"
+  },
+  {
+    "id": "ASC-010",
+    "name": "Confirmation Pending",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "confirmation@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "CO"
+  },
+  {
+    "id": "ASC-011",
+    "name": "Not Assigned",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "not@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "NO"
+  },
+  {
+    "id": "ASC-012",
+    "name": "Assigned Vasanth",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "assigned@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "AS"
+  },
+  {
+    "id": "ASC-013",
+    "name": "Assigned to Karthik",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "assigned@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "AS"
+  },
+  {
+    "id": "ASC-014",
+    "name": "Assigned Deepak",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "assigned@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "AS"
+  },
+  {
+    "id": "ASC-015",
+    "name": "Delivered",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "delivered@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "DE"
+  },
+  {
+    "id": "ASC-016",
+    "name": "Print proceed",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "print@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "PR"
+  },
+  {
+    "id": "ASC-017",
+    "name": "Print Proceed Canvera",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "print@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "PR"
+  },
+  {
+    "id": "ASC-018",
+    "name": "Mani Correction",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "mani@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "MA"
+  },
+  {
+    "id": "ASC-019",
+    "name": "print ready",
+    "type": "VENDOR",
+    "category": "Photography/Editing",
+    "email": "print@example.com",
+    "phone": "+91 00000 00000",
+    "initials": "PR"
+  }
+]

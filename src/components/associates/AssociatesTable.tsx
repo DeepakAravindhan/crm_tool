@@ -11,12 +11,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 
-const associatesData = [
-  { id: "ASC-001", name: "JSW Steel Ltd", type: "CUSTOMER", category: "Enterprise", email: "procurement@jsw.in", phone: "+91 98765 43210", initials: "JS" },
-  { id: "ASC-002", name: "ABC Logistics", type: "VENDOR", category: "Transport", email: "dispatch@abclogistics.com", phone: "+91 87654 32109", initials: "AB" },
-  { id: "ASC-003", name: "Reliance Ind", type: "CUSTOMER", category: "Enterprise", email: "vendor.mgmt@ril.com", phone: "+91 76543 21098", initials: "RI" },
-  { id: "ASC-004", name: "TechNova IT Services", type: "VENDOR", category: "Software", email: "billing@technova.in", phone: "+91 65432 10987", initials: "TN" },
-];
+import associatesDataRaw from "../../data/associates.json";
+const associatesData = associatesDataRaw as any[];
 
 export function AssociatesTable() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -140,7 +136,7 @@ export function AssociatesTable() {
       </div>
 
       <div className="flex items-center justify-between px-2 text-sm text-slate-500">
-        <div>Showing 1 to 4 of 4 entries</div>
+        <div>Showing {associatesData.length} entries</div>
         <div className="flex space-x-2">
           <Button variant="outline" size="sm" disabled>Previous</Button>
           <Button variant="outline" size="sm" disabled>Next</Button>

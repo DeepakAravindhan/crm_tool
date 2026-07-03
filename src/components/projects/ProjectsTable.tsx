@@ -10,12 +10,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 
-const projectsData = [
-  { id: "PRJ-001", name: "Alpha Headquarters", code: "ALP-HQ", budget: "₹15.5M", status: "ACTIVE", value: "₹4.2M" },
-  { id: "PRJ-002", name: "Beta Logistics Hub", code: "BET-LH", budget: "₹8.2M", status: "ON_HOLD", value: "₹1.1M" },
-  { id: "PRJ-003", name: "Gamma Retail Tech", code: "GAM-RT", budget: "₹2.5M", status: "COMPLETED", value: "₹2.5M" },
-  { id: "PRJ-004", name: "Delta Expansion", code: "DEL-EX", budget: "₹35.0M", status: "ACTIVE", value: "₹12.4M" },
-];
+import projectsDataRaw from "../../data/projects.json";
+const projectsData = projectsDataRaw as any[];
 
 export function ProjectsTable() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -84,22 +80,22 @@ export function ProjectsTable() {
         <Table>
           <TableHeader>
             <TableRow className="bg-slate-50/80 hover:bg-slate-50/80">
-              <TableHead className="font-semibold text-slate-700">Project Code</TableHead>
               <TableHead className="font-semibold text-slate-700">Project Name</TableHead>
-              <TableHead className="font-semibold text-slate-700">Total Value (Billed)</TableHead>
-              <TableHead className="font-semibold text-slate-700">Budget</TableHead>
-              <TableHead className="font-semibold text-slate-700">Status</TableHead>
+              <TableHead className="font-semibold text-slate-700">Associates</TableHead>
+              <TableHead className="font-semibold text-slate-700">Event Date</TableHead>
+              <TableHead className="font-semibold text-slate-700">CV Status</TableHead>
+              <TableHead className="font-semibold text-slate-700">TV Status</TableHead>
               <TableHead className="text-right font-semibold text-slate-700">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {projectsData.map((project) => (
               <TableRow key={project.id} className="hover:bg-slate-50 transition-colors">
-                <TableCell className="font-medium text-slate-900">{project.code}</TableCell>
-                <TableCell>{project.name}</TableCell>
-                <TableCell className="font-semibold text-emerald-600">{project.value}</TableCell>
-                <TableCell className="text-slate-500">{project.budget}</TableCell>
-                <TableCell>{getStatusBadge(project.status)}</TableCell>
+                <TableCell className="font-medium text-slate-900">{project.name}</TableCell>
+                <TableCell>{project.assigned}</TableCell>
+                <TableCell>{project.eventDate}</TableCell>
+                <TableCell>{project.cvPending}</TableCell>
+                <TableCell>{project.tvPending}</TableCell>
                 <TableCell className="text-right">
                   <DropdownMenu>
                     <DropdownMenuTrigger>
@@ -123,7 +119,7 @@ export function ProjectsTable() {
       </div>
 
       <div className="flex items-center justify-between px-2 text-sm text-slate-500">
-        <div>Showing 1 to 4 of 4 entries</div>
+        <div>Showing {projectsData.length} entries</div>
         <div className="flex space-x-2">
           <Button variant="outline" size="sm" disabled>Previous</Button>
           <Button variant="outline" size="sm" disabled>Next</Button>
