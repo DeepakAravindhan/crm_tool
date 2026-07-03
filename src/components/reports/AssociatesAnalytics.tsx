@@ -79,7 +79,9 @@ export function AssociatesAnalytics() {
                 <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e2e8f0" />
                 <XAxis type="number" stroke="#888" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(v) => `₹${v / 100000}L`} />
                 <YAxis type="category" dataKey="name" stroke="#888" fontSize={12} tickLine={false} axisLine={false} width={100} />
-                <RechartsTooltip formatter={(value: number) => `₹${(value / 100000).toFixed(1)} Lakhs`} />
+                <RechartsTooltip formatter={(value) =>
+  `₹${(Number(value) / 100000).toFixed(1)}L`
+} />
                 <Bar dataKey="revenue" fill="#6366f1" radius={[0, 4, 4, 0]} barSize={24} />
               </BarChart>
             </ResponsiveContainer>
