@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  MANAGER
+  EMPLOYEE
+}
+
+enum AssociateType {
+  CUSTOMER
+  VENDOR
+}
+
+enum ProjectStatus {
+  ACTIVE
+  ON_HOLD
+  COMPLETED
+  CANCELLED
+}
+
+enum TransactionType {
+  QUOTATION
+  PROFORMA_INVOICE
+  SALES_INVOICE
+  DELIVERY_CHALLAN
+  PAYMENT_IN
+  SALES_RETURN
+  CREDIT_NOTE
+  PURCHASE_ORDER
+  PURCHASE_INVOICE
+  PAYMENT_OUT
+  PURCHASE_RETURN
+  DEBIT_NOTE
+}
+
+model User {
+  id               String             @id @default(cuid())
+  name             String
+  email            String             @unique
+  passwordHash     String?
+  role             Role               @default(EMPLOYEE)
+  department       String?
+  designation      String?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  
+  attendance       AttendanceRecord[]
+  actionHistory    ActionHistory[]
+  transactions     Transaction[]
+}
+
+model AttendanceRecord {
+  id          String    @id @default(cuid())
+  userId      String
+  checkIn     DateTime
+  checkOut    DateTime?
+  date        DateTime  @db.Date
+  status      String    
+  createdAt   DateTime  @default(now())
+  
+  user        User      @relation(fields: [userId], references: [id])
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  name        String
+  code        String    @unique
+  budget      Float     @default(0.0)
+  status      ProjectStatus @default(ACTIVE)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  inventory   InventoryItem[]
+  transactions Transaction[]
+}
+
+model Associate {
+  id          String    @id @default(cuid())
+  name        String
+  mobile      String?
+  email       String?
+  type        AssociateType
+  category    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  transactions Transaction[]
+}
+
+model InventoryItem {
+  id          String    @id @default(cuid())
+  name        String
+  code        String    @unique
+  unit        String
+  sellingPrice Float    @default(0.0)
+  stock       Float     @default(0.0)
+  projectId   String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  project     Project?  @relation(fields: [projectId], references: [id])
+}
+
+model Transaction {
+  id            String    @id @default(cuid())
+  type          TransactionType
+  number        String    @unique 
+  date          DateTime
+  totalAmount   Float     @default(0.0)
+  status        String    
+  
+  associateId   String
+  projectId     String?
+  createdById   String
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  associate     Associate @relation(fields: [associateId], references: [id])
+  project       Project?  @relation(fields: [projectId], references: [id])
+  createdBy     User      @relation(fields: [createdById], references: [id])
+}
+
+model ActionHistory {
+  id          String    @id @default(cuid())
+  userId      String
+  action      String    
+  entityId    String?
+  entityType  String?
+  details     String?   
+  createdAt   DateTime  @default(now())
+
+  user        User      @relation(fields: [userId], references: [id])
+}
